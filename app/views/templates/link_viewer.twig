@@ -1,0 +1,51 @@
+{% for link in links %}
+    <div class="container col-6">
+        
+        <div class="card">
+            <!--
+            <div>
+                {{ link.timestamp }}
+            </div>
+            -->
+            <a href="/link/{{ link.id }}">
+                <h3>
+                {{ link.title }}
+                </h3>
+                comments
+            </a>
+            <div>
+                By <a href = '/profile/{{ link.userID }}'>
+                    {{ link.username }}
+                </a>
+            </div>
+            <div>
+                {{ link.upvotes }}&hearts;
+            </div>
+            {% if loggedIn %}
+                <form method = "POST" action="/upvote/link">
+                    
+                    {% if link.isUpvoted %}
+                        <button type = 'submit' name = 'upvote-button' value='{{ link.id }}'>
+                        Unlike
+                        </button>
+                    {% else %}
+                        <button type = 'submit' name = 'upvote-button' value='{{ link.id }}'>
+                        Like
+                        </button>
+                    {% endif %}
+                </form>
+            {% endif %}
+            {% if link.tags %}
+                <div>
+                    Tags:
+                    {% for tag in link.tags %}
+                        <a href = '/tag/{{ tag }}'>
+                            {{ tag }}
+                        </a>
+                    {% endfor %}
+                </div>
+                
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,17 @@
+{
+    "name": "hmaurya/mvc-project",
+    "description": "Toro MVC",
+    "authors": [
+        {
+            "name": "Harshit Maurya",
+            "email": "hmaurya999@gmail.com"
+        }
+    ],
+    "require": {
+	    "torophp/torophp":"dev-master",
+        "twig/twig": "~2.0"
+     },
+     "autoload": {
+	    "classmap":["app","config"]
+		         }
+}

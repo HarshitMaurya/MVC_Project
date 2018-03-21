@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <script src="/assets/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        {% include "templates/header.twig" %}
+        <div class = "container-fluid col-6">
+            <a href = "/profile/{{ user.id }}">
+                {{ user.username }}
+            </a>
+            <br/>
+            Karma : {{ karma }}
+            <br/>
+            Followed By : {{ followData.followers }}
+            Follows : {{ followData.followees }}
+            {% if loggedIn %}
+                {% if loggedIn.id!=user.id %}
+                    <form method="POST" action="/follow">
+                        {% if isFollowed %}
+                            <button type="submit" name="follow-button" value = "{{ user.id }}">
+                            Unfollow
+                            </button>
+                        {% else %}
+                            <button type="submit" name="follow-button" value = "{{ user.id }}">
+                            Follow
+                            </button>
+                        {% endif %}
+                    </form>
+                {% endif %}
+            {% endif %}
+        </div>
+        {% include "templates/link_viewer.twig" %}
+    </body>
+</html>

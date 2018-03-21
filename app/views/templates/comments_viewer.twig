@@ -1,0 +1,43 @@
+{% for comment in comments %}
+    <div class="container">
+        
+        <div class="card">
+            <div>
+                <a href = '/profile/{{ comment.userID }}'>
+                    {{ comment.username }}
+                </a>
+            </div>
+            <p>
+                {{ comment.content }}
+            </p>
+            <!--
+            <p>
+                {{ comment.timestamp }}
+            </p>
+            -->
+            <div>
+                {{ comment.upvotes }}&hearts;
+            </div>
+            {% if loggedIn %}
+                <form method = "POST" action="/upvote/comment">
+                    
+                    
+                    {% if comment.isUpvoted %}
+                        <button type = 'submit' name = 'upvote-button' value='{{ comment.id }}'>
+                        Unlike
+                        </button>
+                    {% else %}
+                        <button type = 'submit' name = 'upvote-button' value='{{ comment.id }}'>
+                        Like
+                        </button>
+                    {% endif %}
+                    
+                </form>
+            {% endif %}
+            
+            
+            
+            
+        </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <script src="assets/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        {% include 'templates/header.twig' %}
+        <div class="container card col-6">
+            <form method="POST">
+                <h3 class="card-header">
+                Serve some delicacy
+                </h3>
+                <br/>
+                <div class="card card-text form-group">
+                    <label>
+                        Title:
+                        <input name= "title" type= "text">
+                    </label><br>
+                    <label>
+                        Content:
+                        <textarea name="content">
+                        </textarea>
+                    </label><br>
+                    <label>
+                        Tags(optional):
+                        <input name= "tag1" type= "text" placeholder="Tag 1">
+                        <input name= "tag2" type= "text" placeholder="Tag 2">
+                        <input name= "tag3" type= "text" placeholder="Tag 3">
+                    </label><br>
+                </div>
+                <input type="submit" name="submit-link-button" class="btn-info">
+            </form>
+        </div>
+    </body>
+</html>

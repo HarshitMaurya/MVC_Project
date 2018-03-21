@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <script src="assets/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        {% include 'templates/header.twig' %}
+        <div class="card">
+            <div class="container card">
+                <form method="POST">
+                    <label>
+                        username
+                        <input type="text" name="username" required="required">
+                    </label>
+                    <label>
+                        password
+                        <input type="password" name="password" required="required">
+                    </label>
+                    <button type="submit" name="login">Login</button>
+                </form>
+            </div>
+            <div class="container card">
+                <form method="POST">
+                    <label>
+                        name
+                        <input type="text" name="name" required>
+                    </label>
+                    <label>
+                        username
+                        <input type="text" name="username" required="required">
+                    </label>
+                    <label>
+                        password
+                        <input type="password" name="password" required="required">
+                    </label>
+                    <button type="submit" name="register">Register</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

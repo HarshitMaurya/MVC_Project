@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <script src="/assets/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        {% include 'templates/header.twig' %}
+        <div class="container jumbotron col-6">
+
+            <h3>
+                <a href="/link/{{link.id}}">
+                    {{ link.title }}
+                </a>
+            </h3>
+            <p>
+                {{ link.content }}
+            </p>
+            <p>
+                BY:
+                <a href = "/profile/{{user.id}}">
+                    {{ link.username }}
+                </a>
+            </p>
+            <div>
+                {{ link.upvotes }}&hearts;
+            </div>
+
+            {% if loggedIn %}
+                <form method = "POST" action="/upvote/link">
+                    
+                    {% if link.isUpvoted %}
+                        <button type = 'submit' name = 'upvote-button' value='{{ link.id }}'>
+                        Unlike
+                        </button>
+                    {% else %}
+                        <button type = 'submit' name = 'upvote-button' value='{{ link.id }}'>
+                        Like
+                        </button>
+                    {% endif %}
+                </form>
+            {% endif %}
+
+            {% if loggedIn %}
+                <div class="container">
+                    <form method="POST">
+                        <label>
+                            Your Comment:
+                            <input type="text" name="comment">
+                        </label>
+                        <input type="submit" name="submit">
+                    </form>
+                </div>
+            {% endif %}
+            {% if link.tags %}
+                <div>
+                    Tags:
+                    {% for tag in link.tags %}
+                        <a href = '/tag/{{ tag }}'>
+                            {{ tag }}
+                        </a>
+                    {% endfor %}
+                </div>
+                
+            {% endif %}
+            {% if comments %}
+                Sort by:
+                <a href = "/link/ {{ link.id }} /new">
+                    New
+                </a>
+                <a href = "/link/ {{ link.id }} /best">
+                    Best
+                </a>
+            {% endif %}
+            
+            {% include 'templates/comments_viewer.twig' %}
+
+        </div>
+    </body>
+</html>
