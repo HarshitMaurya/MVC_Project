@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
         <script src="/assets/js/bootstrap.min.js"></script>
     </head>
     <body>
@@ -18,11 +19,11 @@
                 {% if loggedIn.id!=user.id %}
                     <form method="POST" action="/follow">
                         {% if isFollowed %}
-                            <button type="submit" name="follow-button" value = "{{ user.id }}">
+                            <button type="submit" class="btn btn-sm btn-outline-danger" name="follow-button" value = "{{ user.id }}">
                             Unfollow
                             </button>
                         {% else %}
-                            <button type="submit" name="follow-button" value = "{{ user.id }}">
+                            <button type="submit" class="btn btn-lg btn-primary" name="follow-button" value = "{{ user.id }}">
                             Follow
                             </button>
                         {% endif %}

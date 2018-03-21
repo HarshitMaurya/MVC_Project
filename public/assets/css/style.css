@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+.custom-navbar {
+    height: 8vh;
+    font-family: 'Dosis', sans-serif;
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    /* Full width */
+    z-index: 10;
+    box-shadow: 0px 0px 10px #111;
+}
+
+.custom-navbar * {
+    color: white;
+    font-size: large;
+}
+
+.custom-navbar *: hover {
+    color: #ddd;
+}
+
+
+/* Links inside the navbar */
+
+.custom-navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+.custom-navbar-brand {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.custom-header-links {
+    padding: auto;
+    margin-top: 1.5vh;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    margin-left: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #222;
+    padding: auto;
+    z-index: 20;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.custom-page-heading {
+    position: relative;
+    top: 5vh;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    color: #eee;
+    background-color: #444;
+    text-align: center;
+    padding: 5px;
+}
+
+.custom-links-container {
+    position: relative;
+    top: 5vh;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.custom-link-title h3 {
+    color: #444;
+    text-decoration: none;
+}
+
+.custom-link-title h3:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.custom-link-title a:hover{
+    text-decoration: none;
+}
+
+.custom-link-card {
+    margin: 5px;
+}
+
+.custom-post-card {
+    position: relative;
+    top: 15vh;
+    border: 1px solid grey;
+    border-radius: 5%;
+    padding: 2vh;
+}
+
+.custom-auth-body {
+    background: linear-gradient(to bottom, #2a2a2a, #888);
+}
+
+.custom-auth-container {
+    position: relative;
+    top: 20vh;
+}
+
+.custom-auth-container>div {
+    position: relative;
+    height: 40vh;
+    padding: auto;
+}
+
+.custom-auth-container>* {
+    padding: 5vh;
+}
+
+.custom-comment-container {
+    position: relative;
+    top: 5vh;
+}

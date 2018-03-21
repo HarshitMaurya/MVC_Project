@@ -1,39 +1,52 @@
 <html>
     <head>
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <script src="assets/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <script src="/assets/js/bootstrap.min.js"></script>
     </head>
-    <body>
+    <body class="custom-auth-body">
         {% include 'templates/header.twig' %}
-        <div class="card">
-            <div class="container card">
+        <div class="container custom-auth-container">
+            <div class="container card  col-4 float-right">
+                <h2>
+                    Login
+                </h2>
                 <form method="POST">
-                    <label>
-                        username
-                        <input type="text" name="username" required="required">
-                    </label>
-                    <label>
-                        password
-                        <input type="password" name="password" required="required">
-                    </label>
-                    <button type="submit" name="login">Login</button>
+                    <div class="form-group">
+                        <label>
+                            Username
+                            <input type="text" name="username" class="form-control" required="required">
+                        </label>
+                        <label>
+                            Password
+                            <input type="password" name="password" class="form-control" required="required">
+                        </label>
+                        <br/>
+                        <button type="submit" class="btn btn-outline-primary" name="login">Login</button>
+                    </div>
                 </form>
             </div>
-            <div class="container card">
+            <div class="container card  col-4 float-left">
                 <form method="POST">
-                    <label>
-                        name
-                        <input type="text" name="name" required>
-                    </label>
-                    <label>
-                        username
-                        <input type="text" name="username" required="required">
-                    </label>
-                    <label>
-                        password
-                        <input type="password" name="password" required="required">
-                    </label>
-                    <button type="submit" name="register">Register</button>
+                    <h2>
+                        Register
+                    </h2>
+                    <div class="form-group">
+                        <label>
+                            Name
+                            <input type="text" name="name" class="form-control" required>
+                        </label>
+                        <label>
+                            Username
+                            <input type="text" name="username" class="form-control" required="required">
+                        </label>
+                        <label>
+                            Password
+                            <input type="password" name="password" class="form-control" required="required">
+                        </label>
+                        <br/>
+                        <button type="submit" class="btn btn-outline-primary" name="register">Register</button>
+                    </div>
                 </form>
             </div>
         </div>

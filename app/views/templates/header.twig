@@ -1,21 +1,67 @@
-<nav class="navbar">
-  <div class="container-fluid col-6">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">ReadDiet</a>
+<nav class="navbar navbar-default custom-navbar">
+  <div class="container-fluid col-8">
+
+    <div class="custom-brand-container">
+      <a class="navbar-brand custom-navbar-brand" href="/">
+        ReadDiet
+      </a>
     </div>
-    <ul class="flex-row">
-      <li class="btn btn-link"><a href="/">Home</a></li>
-      <li class="btn btn-link"><a href="/new">New</a></li>
-      <li class="btn btn-link"><a href="/best">Best</a></li>
-      
-      {% if loggedIn %}
-        <li class="btn btn-link"><a href="/following">Following</a></li>
-        <li class="btn btn-link"><a href="/profile/{{ loggedIn.id }}">{{ loggedIn.username }}</a></li>
-        <li class="btn btn-link"><a href="/post">Create</a></li>
-        <li class="btn btn-link"><a href="/logout">Logout</a></li>
-      {% else %}
-        <li class="btn btn-link"><a href="/login">Login</a></li>
-      {% endif %}
-    </ul>
+
+    <div class="custom-header-links">
+      <ul class="row">
+        <a href="/" class="btn">
+          <li class="list-unstyled">
+            HOME
+          </li>
+        </a>
+
+        <a href="/new" class="btn">
+          <li class="list-unstyled">
+            NEW
+          </li>
+        </a>
+
+        <a href="/best"  class="btn">
+          <li class="list-unstyled">
+            BEST
+          </li>
+        </a>
+
+        {% if loggedIn %}
+          <a href="/following" class="btn">
+            <li class="list-unstyled">
+              FOLLOWING
+            </li>
+          </a>
+
+          <a href="/post">
+            <li class="btn btn-outline-success">
+              Create
+            </li>
+          </a>
+
+          <div class="dropdown">
+            <span>
+              {{ loggedIn.username }}
+            </span>
+
+            <div class="dropdown-content">
+              <a href="/logout" class="">
+                <li class="list-unstyled">
+                  Logout
+                </li>
+              </a>
+            </div>
+          </div>
+
+        {% else %}
+          <a href="/login" class="btn btn-toolbar">
+            <li class="list-unstyled">
+              Login
+            </li>
+          </a>
+        {% endif %}
+      </ul>
+    </div>
   </div>
 </nav>

@@ -12,7 +12,7 @@ class FollowingController {
 		}
 		$links = \Model\LinkModel::fetchAllProperties($links, $_SESSION['userID']);
 		$user = \Model\UserModel::findByID($_SESSION['userID']);
-		echo \View\Loader::make()->render('templates/home.twig',
+		echo \View\Loader::make()->render('templates/following.twig',
 			array('links' => $links, 'loggedIn' => $user)
 		);
 

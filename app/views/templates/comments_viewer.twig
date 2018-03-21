@@ -10,11 +10,6 @@
             <p>
                 {{ comment.content }}
             </p>
-            <!--
-            <p>
-                {{ comment.timestamp }}
-            </p>
-            -->
             <div>
                 {{ comment.upvotes }}&hearts;
             </div>
@@ -23,11 +18,11 @@
                     
                     
                     {% if comment.isUpvoted %}
-                        <button type = 'submit' name = 'upvote-button' value='{{ comment.id }}'>
+                        <button type = 'submit' name = 'upvote-button' class="btn btn-sm btn-outline-danger" value='{{ comment.id }}'>
                         Unlike
                         </button>
                     {% else %}
-                        <button type = 'submit' name = 'upvote-button' value='{{ comment.id }}'>
+                        <button type = 'submit' name = 'upvote-button' class="btn btn-sm btn-primary" value='{{ comment.id }}'>
                         Like
                         </button>
                     {% endif %}

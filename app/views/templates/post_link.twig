@@ -1,34 +1,35 @@
 <html>
     <head>
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <script src="assets/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <script src="/assets/js/bootstrap.min.js"></script>
     </head>
     <body>
         {% include 'templates/header.twig' %}
-        <div class="container card col-6">
+        <div class="custom-post-card container col-6">
             <form method="POST">
-                <h3 class="card-header">
-                Serve some delicacy
+                <h3 class="alert-heading">
+                Food for thought
                 </h3>
                 <br/>
-                <div class="card card-text form-group">
+                <div class="card form-group">
                     <label>
                         Title:
-                        <input name= "title" type= "text">
+                        <input name= "title" class ="form-control" type= "text">
                     </label><br>
                     <label>
                         Content:
-                        <textarea name="content">
+                        <textarea name="content"  class ="form-control">
                         </textarea>
                     </label><br>
                     <label>
                         Tags(optional):
-                        <input name= "tag1" type= "text" placeholder="Tag 1">
-                        <input name= "tag2" type= "text" placeholder="Tag 2">
-                        <input name= "tag3" type= "text" placeholder="Tag 3">
-                    </label><br>
+                        <input name= "tag1"  class ="form-control" type= "text" placeholder="Tag 1">
+                        <input name= "tag2"  class ="form-control" type= "text" placeholder="Tag 2">
+                        <input name= "tag3"  class ="form-control" type= "text" placeholder="Tag 3">
+                    </label>
                 </div>
-                <input type="submit" name="submit-link-button" class="btn-info">
+                <input type="submit" name="submit-link-button" class="btn btn-outline-success">
             </form>
         </div>
     </body>

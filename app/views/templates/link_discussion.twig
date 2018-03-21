@@ -1,16 +1,16 @@
 <html>
     <head>
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
         <script src="/assets/js/bootstrap.min.js"></script>
     </head>
     <body>
         {% include 'templates/header.twig' %}
-        <div class="container jumbotron col-6">
-
+        <div class="container jumbotron col-6 custom-comment-container">
             <h3>
-                <a href="/link/{{link.id}}">
-                    {{ link.title }}
-                </a>
+            <a href="/link/{{link.id}}">
+                {{ link.title }}
+            </a>
             </h3>
             <p>
                 {{ link.content }}
@@ -24,30 +24,29 @@
             <div>
                 {{ link.upvotes }}&hearts;
             </div>
-
             {% if loggedIn %}
                 <form method = "POST" action="/upvote/link">
                     
                     {% if link.isUpvoted %}
-                        <button type = 'submit' name = 'upvote-button' value='{{ link.id }}'>
+                        <button type = 'submit' class="btn btn-outline-danger" name = 'upvote-button' value='{{ link.id }}'>
                         Unlike
                         </button>
                     {% else %}
-                        <button type = 'submit' name = 'upvote-button' value='{{ link.id }}'>
+                        <button type = 'submit' class="btn btn-primary" name = 'upvote-button' value='{{ link.id }}'>
                         Like
                         </button>
                     {% endif %}
                 </form>
             {% endif %}
-
             {% if loggedIn %}
-                <div class="container">
-                    <form method="POST">
+                <div class="container-fluid">
+                    <form method="POST" class="form-group">
                         <label>
                             Your Comment:
-                            <input type="text" name="comment">
+                            <textarea class="form-control form-text form-control-lg" name="comment"></textarea>
                         </label>
-                        <input type="submit" name="submit">
+                        <br/>
+                        <input type="submit" class="btn btn-secondary" name="submit">
                     </form>
                 </div>
             {% endif %}
@@ -73,7 +72,6 @@
             {% endif %}
             
             {% include 'templates/comments_viewer.twig' %}
-
         </div>
     </body>
 </html>
