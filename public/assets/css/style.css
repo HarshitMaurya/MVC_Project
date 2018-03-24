@@ -64,13 +64,21 @@
 .custom-page-heading {
     position: relative;
     top: 5vh;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
     color: #eee;
     background-color: #444;
     text-align: center;
-    padding: 5px;
+    padding: 8px;
+}
+
+.custom-tag-heading{
+    position: relative;
+    top: 5vh;
+    text-align: center;
+}
+
+.custom-profile-heading{
+    position: relative;
+    top: 5vh;
 }
 
 .custom-links-container {
@@ -95,7 +103,9 @@
 }
 
 .custom-link-card {
-    margin: 5px;
+    margin: 10px;
+    padding: 10px;
+    padding-left: auto;
 }
 
 .custom-post-card {
