@@ -7,5 +7,5 @@ $ mysql -u root -p readdiet < dump.sql
 $ cd public
 $ php -S localhost:8080
 ```
-*Open localhost:8080 in browser
+*Open localhost:8080 in browser  
 *Register with ReadDiet and start blogging
