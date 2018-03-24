@@ -1,9 +1,7 @@
-<div class="container custom-links-container col-6">
+<div class="container-fluid custom-links-container col-xl-6 col-lg-8 col-md-10 col-sm-auto">
     {% for link in links %}
         
-        <div class="card custom-link-card">
-            
-            <div class="card container">
+            <div class="card custom-link-card">
                 <div class="custom-link-title">
                     <a href="/link/{{ link.id }}">
                         <h3>
@@ -47,8 +45,6 @@
                     
                 {% endif %}
             </div>
-            
-        </div>
-        
+         
     {% endfor %}
 </div>
