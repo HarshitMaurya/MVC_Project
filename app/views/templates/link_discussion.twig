@@ -26,7 +26,7 @@
             </div>
             {% if loggedIn %}
                 <form method = "POST" action="/upvote/link">
-                    
+
                     {% if link.isUpvoted %}
                         <button type = 'submit' class="btn btn-outline-danger" name = 'upvote-button' value='{{ link.id }}'>
                         Unlike
@@ -59,18 +59,18 @@
                         </a>
                     {% endfor %}
                 </div>
-                
+
             {% endif %}
             {% if comments %}
                 Sort by:
-                <a href = "/link/ {{ link.id }} /new">
+                <a href = '/link/{{ link.id }}/new'>
                     New
                 </a>
-                <a href = "/link/ {{ link.id }} /best">
+                <a href = '/link/{{ link.id }}/best'>
                     Best
                 </a>
             {% endif %}
-            
+
             {% include 'templates/comments_viewer.twig' %}
         </div>
     </body>

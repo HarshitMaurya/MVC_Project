@@ -1,9 +1,9 @@
 {% for comment in comments %}
     <div class="container">
-        
+
         <div class="card">
             <div>
-                <a href = '/profile/{{ comment.userID }}'>
+                <a href = '/profile/{{ comment.commenter }}'>
                     {{ comment.username }}
                 </a>
             </div>
@@ -15,8 +15,8 @@
             </div>
             {% if loggedIn %}
                 <form method = "POST" action="/upvote/comment">
-                    
-                    
+
+
                     {% if comment.isUpvoted %}
                         <button type = 'submit' name = 'upvote-button' class="btn btn-sm btn-outline-danger" value='{{ comment.id }}'>
                         Unlike
@@ -26,13 +26,13 @@
                         Like
                         </button>
                     {% endif %}
-                    
+
                 </form>
             {% endif %}
-            
-            
-            
-            
+
+
+
+
         </div>
     </div>
 {% endfor %}
